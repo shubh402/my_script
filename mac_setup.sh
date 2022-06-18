@@ -1,3 +1,6 @@
+# setup homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # upgrade packages via homebrew 
 brew update && brew upgrade
 

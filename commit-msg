@@ -1,5 +1,5 @@
 #!/bin/sh
-# From Gerrit Code Review 3.6.0-rc5-484-g6ac9ddaaa8
+# From Gerrit Code Review 3.6.1-713-gb31e7727f3
 #
 # Part of Gerrit Code Review (https://www.gerritcodereview.com/)
 #
@@ -80,7 +80,7 @@ if ! mv "${dest}" "$1" ; then
   exit 1
 fi
 
-# Siging commits hook
+# Sign-off commits hook
 NAME=$(git config user.name)
 EMAIL=$(git config user.email)
 
