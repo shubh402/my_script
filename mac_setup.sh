@@ -24,12 +24,9 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-
-
-function yarn-s () {
+function yarn-s
 yarn set version stable
-echo '
-// yarn stuff
+echo '# yarn stuff
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -37,4 +34,6 @@ echo '
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions'>> .gitignore
-}
+end
+
+funcsave yarn-s
