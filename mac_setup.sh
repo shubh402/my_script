@@ -5,7 +5,10 @@
 brew update && brew upgrade
 
 # install some pakages
-brew install git gcc node docker fish
+brew install git clang node fish
+
+# install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # setup my git configs
 git config --global user.name "Shubh"
@@ -23,6 +26,8 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 # setup vim.plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# setup yarn-s script to use yarn berry instead oflegacy yarn 1 in repo
 
 function yarn-s
 yarn set version stable
