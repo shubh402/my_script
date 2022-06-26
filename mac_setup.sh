@@ -28,11 +28,13 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 function yarn-s () {
                      yarn set version stable
-                     echo '.yarn/*
-                     !.yarn/cache
-                     !.yarn/patches
-                     !.yarn/plugins
-                     !.yarn/releases
-                     !.yarn/sdks
-                     !.yarn/versions'>> .gitignore
+                     echo '
+		     	// yarn stuff
+		     	.pnp.*
+			.yarn/*
+			!.yarn/patches
+			!.yarn/plugins
+			!.yarn/releases
+			!.yarn/sdks
+			!.yarn/versions'>> .gitignore
                      }
