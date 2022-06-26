@@ -30,6 +30,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # setup yarn-s script to use yarn berry instead oflegacy yarn 1 in repo
 
 function yarn-s
+rm -rf node_modules
 yarn set version stable
 echo '# yarn stuff
 .pnp.*
