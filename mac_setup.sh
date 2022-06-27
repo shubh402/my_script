@@ -5,7 +5,10 @@
 brew update && brew upgrade
 
 # install some pakages
-brew install git clang node fish
+brew install git clang fish
+
+# install n for node version management
+sudo npm i -g n
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
