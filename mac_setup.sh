@@ -5,7 +5,7 @@
 brew update && brew upgrade
 
 # install some pakages
-brew install git clang fish
+brew install git clang
 
 # install n for node version management
 sudo npm i -g n
@@ -23,8 +23,8 @@ mkdir -p ~/.git-templates/hooks
 curl -Lo ~/.git-templates/hooks/commit-msg https://raw.githubusercontent.com/Imshubh69/my_script/main/commit-msg
 chmod 755 ~/.git-templates/hooks/commit-msg
 
-# setup oh my fish too
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+# setup oh my zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # setup vim.plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -32,17 +32,15 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # setup yarn-s script to use yarn berry instead oflegacy yarn 1 in repo
 
-function yarn-s
+echo 'yarn-s(){
 rm -rf node_modules yarn.lock
 yarn set version stable
-echo '# yarn stuff
+printf "# yarn stuff
 .pnp.*
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/sdks
-!.yarn/versions'>> .gitignore
-end
-
-funcsave yarn-s
+!.yarn/versions">> .gitignore
+}'>> ~/.zshrc
