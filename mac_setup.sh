@@ -13,6 +13,10 @@ sudo npm i -g n
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# setup yarn properly
+corepack enable
+corepack prepare yarn@3.2.1 --activate
+
 # setup my git configs
 git config --global user.name "Shubh"
 git config --global user.email "vishwajitg471@gmail.com"
@@ -33,7 +37,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # setup yarn-s script to use yarn berry instead oflegacy yarn 1 in repo
 
 echo 'yarn-s(){
-rm -rf node_modules yarn.lock
 yarn set version stable
 printf "# yarn stuff
 .pnp.*
