@@ -1,16 +1,32 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"automerge": true,
 	"extends": [
 		"config:base",
-		":disableDependencyDashboard",
 		":semanticCommitTypeAll(build)",
 		":disableRateLimiting",
-		":automergeMinor",
-		":automergeBranch"
+		":maintainLockFilesWeekly",
+		":rebaseStalePrs",
+		":gitSignOff"
+
 	],
 	"labels": [
 		"dependencies"
 	],
-	"semanticCommits": true
+	"major": {
+		"stabilityDays": 14
+	},
+	"minor": {
+		"stabilityDays": 7
+	},
+	"patch": {
+		"groupName": "dependencies (patch)",
+		"groupSlug": "patch",
+		"stabilityDays": 3
+	},
+	"semanticCommits": true,
+	"platformAutomerge": true,
+	"timezone": "Asia/Kolkata",
+	"updateInternalDeps": true
 }
 
