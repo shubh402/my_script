@@ -1,0 +1,3 @@
+[submodule "renovate-config"]
+	path = renovate-config
+	url = https://github.com/Imshubh69/renovate-config
